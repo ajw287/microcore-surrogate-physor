@@ -26,10 +26,12 @@ np.random.seed(int(seed))
 rn.seed(np.random.randint(0, 2147483647, dtype='l'))
 #
 from keras import backend as K
-tf.set_random_seed(np.random.randint(0, 2147483647, dtype='l'))
-session_conf = tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
-sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
-K.set_session(sess)
+tf.random.set_seed(np.random.randint(0, 2147483647, dtype='l'))
+## removed from tensorflow API... :(
+#tf.set_random_seed(np.random.randint(0, 2147483647, dtype='l'))
+#session_conf = tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
+#sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
+#K.set_session(sess)
 
 from keras.models import Sequential
 from keras.layers import Dense, Activation

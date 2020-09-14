@@ -7,7 +7,6 @@ echo "to a smaller number (e.g. 10, 5) to run relatively quickly"
 echo ""
 read -n 1 -s -r -p "       Press any key to continue                                                             "
 echo ""
-cd code/figure-5-2/
+cd code/figure-3/
 time ./build_heatmap.sh
 mv ./heatmap.svg ../..
-
